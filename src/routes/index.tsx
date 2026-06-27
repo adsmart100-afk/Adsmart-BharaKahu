@@ -257,8 +257,64 @@ function Index() {
         </div>
       </section>
 
+      {/* GALLERY */}
+      <section id="gallery" className="border-b border-ink/10 bg-secondary py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <div className="mb-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink/50">
+                [ 03 / Gallery ]
+              </div>
+              <h2 className="font-display text-5xl uppercase leading-none md:text-7xl">
+                Recent work
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm text-ink/60">
+              A peek at jobs off the press — banners, cards, shields and everything in between.
+              Want something similar? Send it on WhatsApp.
+            </p>
+          </div>
+
+          <div className="grid auto-rows-[180px] grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 lg:auto-rows-[200px]">
+            {GALLERY.map((g, i) => (
+              <figure
+                key={i}
+                className={`group relative overflow-hidden bg-ink ${g.span}`}
+              >
+                <img
+                  src={g.src}
+                  alt={g.label}
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                  className="size-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-ink/90 px-4 py-3 font-mono text-[10px] uppercase tracking-widest text-paper transition-transform duration-300 group-hover:translate-y-0">
+                  {g.label}
+                </figcaption>
+                <span className="absolute right-2 top-2 bg-paper/90 px-1.5 py-0.5 font-mono text-[9px] tracking-widest text-ink">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </figure>
+            ))}
+          </div>
+
+          <div className="mt-10 flex justify-center">
+            <a
+              href={`https://wa.me/${WA_PRIMARY}`}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-3 border border-ink bg-paper px-6 py-3 text-xs font-bold uppercase tracking-widest text-ink transition-all hover:bg-ink hover:text-paper"
+            >
+              Start your project on WhatsApp →
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section id="contact" className="py-24">
+
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-14">
             <div className="mb-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink/50">
