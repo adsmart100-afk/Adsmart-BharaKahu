@@ -1,5 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logo from "@/assets/adsmart-logo.png.asset.json";
+import svcPanaflex from "@/assets/svc-panaflex.jpg";
+import svcVisiting from "@/assets/svc-visiting.jpg";
+import svcBrochures from "@/assets/svc-brochures.jpg";
+import svcWedding from "@/assets/svc-wedding.jpg";
+import svcCertificates from "@/assets/svc-certificates.jpg";
+import svcStickers from "@/assets/svc-stickers.jpg";
+import svcShields from "@/assets/svc-shields.jpg";
+import svcFlyers from "@/assets/svc-flyers.jpg";
+import svcFiles from "@/assets/svc-files.jpg";
+import svcBillbooks from "@/assets/svc-billbooks.jpg";
+import galleryPress from "@/assets/gallery-press.jpg";
+import gallerySignboard from "@/assets/gallery-signboard.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -16,16 +28,29 @@ export const Route = createFileRoute("/")({
 });
 
 const SERVICES = [
-  { name: "Panaflex", desc: "Weather-resistant large-format signage and banners.", tint: "ink-cyan" },
-  { name: "Visiting Cards", desc: "Matte, gloss and textured finishes that last.", tint: "ink-magenta" },
-  { name: "Brochures", desc: "Bi-fold, tri-fold and stitched marketing books.", tint: "ink-yellow" },
-  { name: "Wedding Cards", desc: "Custom invitations with foil and emboss work.", tint: "ink-green" },
-  { name: "Certificates", desc: "Crisp award and recognition prints, foil optional.", tint: "ink-cyan" },
-  { name: "Stickers", desc: "Die-cut vinyl decals and adhesive product labels.", tint: "ink-magenta" },
-  { name: "Shields", desc: "Acrylic and wooden recognition shields, engraved.", tint: "ink-yellow" },
-  { name: "Flyers", desc: "Single-sheet promo prints in any GSM, bulk runs.", tint: "ink-green" },
-  { name: "Files", desc: "Branded folders and presentation files for offices.", tint: "ink-cyan" },
-  { name: "Bill Books", desc: "Serialized carbonless invoice and receipt pads.", tint: "ink-magenta" },
+  { name: "Panaflex", desc: "Weather-resistant large-format signage and banners.", tint: "ink-cyan", img: svcPanaflex },
+  { name: "Visiting Cards", desc: "Matte, gloss and textured finishes that last.", tint: "ink-magenta", img: svcVisiting },
+  { name: "Brochures", desc: "Bi-fold, tri-fold and stitched marketing books.", tint: "ink-yellow", img: svcBrochures },
+  { name: "Wedding Cards", desc: "Custom invitations with foil and emboss work.", tint: "ink-green", img: svcWedding },
+  { name: "Certificates", desc: "Crisp award and recognition prints, foil optional.", tint: "ink-cyan", img: svcCertificates },
+  { name: "Stickers", desc: "Die-cut vinyl decals and adhesive product labels.", tint: "ink-magenta", img: svcStickers },
+  { name: "Shields", desc: "Acrylic and wooden recognition shields, engraved.", tint: "ink-yellow", img: svcShields },
+  { name: "Flyers", desc: "Single-sheet promo prints in any GSM, bulk runs.", tint: "ink-green", img: svcFlyers },
+  { name: "Files", desc: "Branded folders and presentation files for offices.", tint: "ink-cyan", img: svcFiles },
+  { name: "Bill Books", desc: "Serialized carbonless invoice and receipt pads.", tint: "ink-magenta", img: svcBillbooks },
+];
+
+const GALLERY = [
+  { src: galleryPress, label: "Wide-format press run", span: "lg:col-span-2 lg:row-span-2" },
+  { src: svcWedding, label: "Gold foil wedding suite", span: "" },
+  { src: svcPanaflex, label: "Outdoor panaflex install", span: "" },
+  { src: svcStickers, label: "Die-cut sticker batch", span: "lg:col-span-2" },
+  { src: svcShields, label: "Engraved acrylic shield", span: "" },
+  { src: svcBrochures, label: "Tri-fold brochure", span: "" },
+  { src: gallerySignboard, label: "Illuminated signboard", span: "lg:col-span-2" },
+  { src: svcVisiting, label: "Matte visiting cards", span: "" },
+  { src: svcCertificates, label: "Foil certificate", span: "" },
+  { src: svcBillbooks, label: "Carbonless bill book", span: "" },
 ];
 
 const WA_PRIMARY = "923344003813";
