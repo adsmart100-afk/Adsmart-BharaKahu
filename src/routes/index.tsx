@@ -318,7 +318,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-14">
             <div className="mb-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink/50">
-              [ 03 / Contact ]
+              [ 04 / Contact ]
             </div>
             <h2 className="font-display text-5xl uppercase leading-none md:text-7xl">
               Let's talk shop.
