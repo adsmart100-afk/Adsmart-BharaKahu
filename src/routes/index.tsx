@@ -191,31 +191,34 @@ function Index() {
           </div>
 
           <div className="grid grid-cols-2 border-l border-t border-paper/10 md:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-1 gap-px bg-paper/10 sm:grid-cols-2 lg:grid-cols-5">
             {SERVICES.map((s, i) => (
               <div
                 key={s.name}
-                className="group relative aspect-square border-b border-r border-paper/10 p-6 transition-colors duration-500 flex flex-col justify-between"
-                style={{
-                  ["--hover" as string]: `var(--${s.tint})`,
-                }}
+                className="group relative flex flex-col bg-ink transition-colors duration-500"
               >
-                <div
-                  className="pointer-events-none absolute inset-0 origin-bottom scale-y-0 transition-transform duration-500 group-hover:scale-y-100"
-                  style={{ background: `var(--${s.tint})` }}
-                />
-                <div className="relative flex items-start justify-between">
-                  <span className="font-mono text-[10px] tracking-widest text-paper/40 group-hover:text-ink/60">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-paper/30 group-hover:text-ink/50">
-                    ●
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={s.img}
+                    alt={`${s.name} sample by Adsmart`}
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="size-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                  />
+                  <div
+                    className="pointer-events-none absolute inset-0 mix-blend-multiply opacity-70 transition-opacity duration-500 group-hover:opacity-0"
+                    style={{ background: `var(--${s.tint})` }}
+                  />
+                  <span className="absolute left-3 top-3 font-mono text-[10px] tracking-widest text-paper/90">
+                    {String(i + 1).padStart(2, "0")} ●
                   </span>
                 </div>
-                <div className="relative">
-                  <h3 className="font-display text-2xl uppercase leading-none text-paper transition-colors group-hover:text-ink md:text-3xl">
+                <div className="relative flex-1 p-5">
+                  <h3 className="font-display text-2xl uppercase leading-none text-paper md:text-3xl">
                     {s.name}
                   </h3>
-                  <p className="mt-2 text-xs leading-snug text-paper/50 transition-colors group-hover:text-ink/70">
+                  <p className="mt-2 text-xs leading-snug text-paper/60">
                     {s.desc}
                   </p>
                 </div>
