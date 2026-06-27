@@ -76,6 +76,9 @@ function Index() {
             <a href="#services" className="text-xs font-semibold uppercase tracking-widest hover:text-brand">
               Services
             </a>
+            <a href="#gallery" className="text-xs font-semibold uppercase tracking-widest hover:text-brand">
+              Gallery
+            </a>
             <a href="#about" className="text-xs font-semibold uppercase tracking-widest hover:text-brand">
               About
             </a>
