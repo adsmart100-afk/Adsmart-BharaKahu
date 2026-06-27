@@ -1,5 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logo from "@/assets/adsmart-logo.png.asset.json";
+import svcPanaflex from "@/assets/svc-panaflex.jpg";
+import svcVisiting from "@/assets/svc-visiting.jpg";
+import svcBrochures from "@/assets/svc-brochures.jpg";
+import svcWedding from "@/assets/svc-wedding.jpg";
+import svcCertificates from "@/assets/svc-certificates.jpg";
+import svcStickers from "@/assets/svc-stickers.jpg";
+import svcShields from "@/assets/svc-shields.jpg";
+import svcFlyers from "@/assets/svc-flyers.jpg";
+import svcFiles from "@/assets/svc-files.jpg";
+import svcBillbooks from "@/assets/svc-billbooks.jpg";
+import galleryPress from "@/assets/gallery-press.jpg";
+import gallerySignboard from "@/assets/gallery-signboard.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -16,16 +28,29 @@ export const Route = createFileRoute("/")({
 });
 
 const SERVICES = [
-  { name: "Panaflex", desc: "Weather-resistant large-format signage and banners.", tint: "ink-cyan" },
-  { name: "Visiting Cards", desc: "Matte, gloss and textured finishes that last.", tint: "ink-magenta" },
-  { name: "Brochures", desc: "Bi-fold, tri-fold and stitched marketing books.", tint: "ink-yellow" },
-  { name: "Wedding Cards", desc: "Custom invitations with foil and emboss work.", tint: "ink-green" },
-  { name: "Certificates", desc: "Crisp award and recognition prints, foil optional.", tint: "ink-cyan" },
-  { name: "Stickers", desc: "Die-cut vinyl decals and adhesive product labels.", tint: "ink-magenta" },
-  { name: "Shields", desc: "Acrylic and wooden recognition shields, engraved.", tint: "ink-yellow" },
-  { name: "Flyers", desc: "Single-sheet promo prints in any GSM, bulk runs.", tint: "ink-green" },
-  { name: "Files", desc: "Branded folders and presentation files for offices.", tint: "ink-cyan" },
-  { name: "Bill Books", desc: "Serialized carbonless invoice and receipt pads.", tint: "ink-magenta" },
+  { name: "Panaflex", desc: "Weather-resistant large-format signage and banners.", tint: "ink-cyan", img: svcPanaflex },
+  { name: "Visiting Cards", desc: "Matte, gloss and textured finishes that last.", tint: "ink-magenta", img: svcVisiting },
+  { name: "Brochures", desc: "Bi-fold, tri-fold and stitched marketing books.", tint: "ink-yellow", img: svcBrochures },
+  { name: "Wedding Cards", desc: "Custom invitations with foil and emboss work.", tint: "ink-green", img: svcWedding },
+  { name: "Certificates", desc: "Crisp award and recognition prints, foil optional.", tint: "ink-cyan", img: svcCertificates },
+  { name: "Stickers", desc: "Die-cut vinyl decals and adhesive product labels.", tint: "ink-magenta", img: svcStickers },
+  { name: "Shields", desc: "Acrylic and wooden recognition shields, engraved.", tint: "ink-yellow", img: svcShields },
+  { name: "Flyers", desc: "Single-sheet promo prints in any GSM, bulk runs.", tint: "ink-green", img: svcFlyers },
+  { name: "Files", desc: "Branded folders and presentation files for offices.", tint: "ink-cyan", img: svcFiles },
+  { name: "Bill Books", desc: "Serialized carbonless invoice and receipt pads.", tint: "ink-magenta", img: svcBillbooks },
+];
+
+const GALLERY = [
+  { src: galleryPress, label: "Wide-format press run", span: "lg:col-span-2 lg:row-span-2" },
+  { src: svcWedding, label: "Gold foil wedding suite", span: "" },
+  { src: svcPanaflex, label: "Outdoor panaflex install", span: "" },
+  { src: svcStickers, label: "Die-cut sticker batch", span: "lg:col-span-2" },
+  { src: svcShields, label: "Engraved acrylic shield", span: "" },
+  { src: svcBrochures, label: "Tri-fold brochure", span: "" },
+  { src: gallerySignboard, label: "Illuminated signboard", span: "lg:col-span-2" },
+  { src: svcVisiting, label: "Matte visiting cards", span: "" },
+  { src: svcCertificates, label: "Foil certificate", span: "" },
+  { src: svcBillbooks, label: "Carbonless bill book", span: "" },
 ];
 
 const WA_PRIMARY = "923344003813";
@@ -50,6 +75,9 @@ function Index() {
           <div className="hidden items-center gap-8 md:flex">
             <a href="#services" className="text-xs font-semibold uppercase tracking-widest hover:text-brand">
               Services
+            </a>
+            <a href="#gallery" className="text-xs font-semibold uppercase tracking-widest hover:text-brand">
+              Gallery
             </a>
             <a href="#about" className="text-xs font-semibold uppercase tracking-widest hover:text-brand">
               About
@@ -162,32 +190,34 @@ function Index() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 border-l border-t border-paper/10 md:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-1 gap-px bg-paper/10 sm:grid-cols-2 lg:grid-cols-5">
             {SERVICES.map((s, i) => (
               <div
                 key={s.name}
-                className="group relative aspect-square border-b border-r border-paper/10 p-6 transition-colors duration-500 flex flex-col justify-between"
-                style={{
-                  ["--hover" as string]: `var(--${s.tint})`,
-                }}
+                className="group relative flex flex-col bg-ink transition-colors duration-500"
               >
-                <div
-                  className="pointer-events-none absolute inset-0 origin-bottom scale-y-0 transition-transform duration-500 group-hover:scale-y-100"
-                  style={{ background: `var(--${s.tint})` }}
-                />
-                <div className="relative flex items-start justify-between">
-                  <span className="font-mono text-[10px] tracking-widest text-paper/40 group-hover:text-ink/60">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-paper/30 group-hover:text-ink/50">
-                    ●
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={s.img}
+                    alt={`${s.name} sample by Adsmart`}
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="size-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                  />
+                  <div
+                    className="pointer-events-none absolute inset-0 mix-blend-multiply opacity-70 transition-opacity duration-500 group-hover:opacity-0"
+                    style={{ background: `var(--${s.tint})` }}
+                  />
+                  <span className="absolute left-3 top-3 font-mono text-[10px] tracking-widest text-paper/90">
+                    {String(i + 1).padStart(2, "0")} ●
                   </span>
                 </div>
-                <div className="relative">
-                  <h3 className="font-display text-2xl uppercase leading-none text-paper transition-colors group-hover:text-ink md:text-3xl">
+                <div className="relative flex-1 p-5">
+                  <h3 className="font-display text-2xl uppercase leading-none text-paper md:text-3xl">
                     {s.name}
                   </h3>
-                  <p className="mt-2 text-xs leading-snug text-paper/50 transition-colors group-hover:text-ink/70">
+                  <p className="mt-2 text-xs leading-snug text-paper/60">
                     {s.desc}
                   </p>
                 </div>
@@ -227,12 +257,68 @@ function Index() {
         </div>
       </section>
 
+      {/* GALLERY */}
+      <section id="gallery" className="border-b border-ink/10 bg-secondary py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <div className="mb-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink/50">
+                [ 03 / Gallery ]
+              </div>
+              <h2 className="font-display text-5xl uppercase leading-none md:text-7xl">
+                Recent work
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm text-ink/60">
+              A peek at jobs off the press — banners, cards, shields and everything in between.
+              Want something similar? Send it on WhatsApp.
+            </p>
+          </div>
+
+          <div className="grid auto-rows-[180px] grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 lg:auto-rows-[200px]">
+            {GALLERY.map((g, i) => (
+              <figure
+                key={i}
+                className={`group relative overflow-hidden bg-ink ${g.span}`}
+              >
+                <img
+                  src={g.src}
+                  alt={g.label}
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                  className="size-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-ink/90 px-4 py-3 font-mono text-[10px] uppercase tracking-widest text-paper transition-transform duration-300 group-hover:translate-y-0">
+                  {g.label}
+                </figcaption>
+                <span className="absolute right-2 top-2 bg-paper/90 px-1.5 py-0.5 font-mono text-[9px] tracking-widest text-ink">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </figure>
+            ))}
+          </div>
+
+          <div className="mt-10 flex justify-center">
+            <a
+              href={`https://wa.me/${WA_PRIMARY}`}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-3 border border-ink bg-paper px-6 py-3 text-xs font-bold uppercase tracking-widest text-ink transition-all hover:bg-ink hover:text-paper"
+            >
+              Start your project on WhatsApp →
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section id="contact" className="py-24">
+
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-14">
             <div className="mb-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink/50">
-              [ 03 / Contact ]
+              [ 04 / Contact ]
             </div>
             <h2 className="font-display text-5xl uppercase leading-none md:text-7xl">
               Let's talk shop.
