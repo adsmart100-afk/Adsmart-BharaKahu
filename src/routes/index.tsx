@@ -190,7 +190,6 @@ function Index() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 border-l border-t border-paper/10 md:grid-cols-3 lg:grid-cols-5">
           <div className="grid grid-cols-1 gap-px bg-paper/10 sm:grid-cols-2 lg:grid-cols-5">
             {SERVICES.map((s, i) => (
               <div
