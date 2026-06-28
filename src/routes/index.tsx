@@ -10,6 +10,25 @@ import svcShields from "@/assets/svc-shields.jpg";
 import svcFlyers from "@/assets/svc-flyers.jpg";
 import svcFiles from "@/assets/svc-files.jpg";
 import svcBillbooks from "@/assets/svc-billbooks.jpg";
+import svcAcrylic from "@/assets/svc-acrylic.jpg";
+import svcNameplate from "@/assets/svc-nameplate.jpg";
+import svcResultcards from "@/assets/svc-resultcards.jpg";
+import svcStamps from "@/assets/svc-stamps.jpg";
+import svcCashmemo from "@/assets/svc-cashmemo.jpg";
+import svcBooks from "@/assets/svc-books.jpg";
+import svcNewsletter from "@/assets/svc-newsletter.jpg";
+import svcMenu from "@/assets/svc-menu.jpg";
+import svcCups from "@/assets/svc-cups.jpg";
+import svcWallpaper from "@/assets/svc-wallpaper.jpg";
+import svcSocial from "@/assets/svc-social.jpg";
+import realBacklight from "@/assets/real-backlight.jpg.asset.json";
+import realLed from "@/assets/real-led.jpg.asset.json";
+import realBranding from "@/assets/real-branding.jpg.asset.json";
+import realTshirt from "@/assets/real-tshirt.jpg.asset.json";
+import realFlag from "@/assets/real-flag.jpg.asset.json";
+import realBus from "@/assets/real-bus.jpg.asset.json";
+import realBillboard from "@/assets/real-billboard.jpg.asset.json";
+import realPackaging from "@/assets/real-packaging.jpg.asset.json";
 import work2 from "@/assets/work-2.png.asset.json";
 import work3 from "@/assets/work-3.png.asset.json";
 import work4 from "@/assets/work-4.png.asset.json";
@@ -28,7 +47,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Premium digital printing in Bhara Kahu, Islamabad. Panaflex, backlit boards, LED boards, wedding cards, branding, t-shirts, wallpapers and more.",
+          "Premium digital printing in Bhara Kahu, Islamabad. Panaflex, backlight boards, LED boards, wedding cards, branding, t-shirts, wallpapers and more.",
       },
     ],
   }),
@@ -39,41 +58,50 @@ type Service = { name: string; desc: string; tint: string; img?: string; waText?
 
 const SERVICES: Service[] = [
   { name: "Panaflex", desc: "Weather-resistant large-format signage and banners.", tint: "ink-cyan", img: svcPanaflex },
-  { name: "Backlit Board", desc: "Illuminated flex boards for shopfronts and signage.", tint: "ink-magenta" },
-  { name: "LED Board", desc: "Bright LED signboards, custom sizes and channels.", tint: "ink-yellow" },
-  { name: "3D Acrylic Boards", desc: "Raised acrylic letters and logos for premium signage.", tint: "ink-green" },
-  { name: "Name Plates", desc: "House, office and door name plates — acrylic or metal.", tint: "ink-cyan" },
+  { name: "Backlight Board", desc: "Illuminated flex boards for shopfronts and signage.", tint: "ink-magenta", img: realBacklight.url },
+  { name: "LED Board", desc: "Bright LED signboards, custom sizes and channels.", tint: "ink-yellow", img: realLed.url },
+  { name: "3D Acrylic Boards", desc: "Raised acrylic letters and logos for premium signage.", tint: "ink-green", img: svcAcrylic },
+  { name: "Name Plates", desc: "House, office and door name plates — acrylic or metal.", tint: "ink-cyan", img: svcNameplate },
   { name: "Visiting Cards", desc: "Matte, gloss and textured finishes that last.", tint: "ink-magenta", img: svcVisiting },
   { name: "Brochures", desc: "Bi-fold, tri-fold and stitched marketing books.", tint: "ink-yellow", img: svcBrochures },
   { name: "Flyers", desc: "Single-sheet promo prints in any GSM, bulk runs.", tint: "ink-green", img: svcFlyers },
   { name: "Wedding Cards", desc: "Custom invitations with foil and emboss work.", tint: "ink-cyan", img: svcWedding },
-  { name: "Fabric Sashes", desc: "Printed sashes for events, weddings and pageants.", tint: "ink-magenta" },
+  { name: "Fabric Sashes", desc: "Printed sashes and flags for events and pageants.", tint: "ink-magenta", img: realFlag.url },
   { name: "Certificates", desc: "Crisp award and recognition prints, foil optional.", tint: "ink-yellow", img: svcCertificates },
-  { name: "Result Cards", desc: "School and academy result card printing in bulk.", tint: "ink-green" },
+  { name: "Result Cards", desc: "School and academy result card printing in bulk.", tint: "ink-green", img: svcResultcards },
   { name: "Stickers", desc: "Die-cut vinyl decals and adhesive product labels.", tint: "ink-cyan", img: svcStickers },
   { name: "Shields", desc: "Acrylic and wooden recognition shields, engraved.", tint: "ink-magenta", img: svcShields },
-  { name: "Stamps", desc: "Self-inking and rubber stamps, ready same day.", tint: "ink-yellow" },
+  { name: "Stamps", desc: "Self-inking and rubber stamps, ready same day.", tint: "ink-yellow", img: svcStamps },
   { name: "File Covers", desc: "Branded folders and presentation files for offices.", tint: "ink-green", img: svcFiles },
   { name: "Bill Books", desc: "Serialized carbonless invoice and receipt pads.", tint: "ink-cyan", img: svcBillbooks },
-  { name: "Cash Memos", desc: "Custom cash memo books for shops and traders.", tint: "ink-magenta" },
-  { name: "Books", desc: "Notebooks, registers and bound book printing.", tint: "ink-yellow" },
-  { name: "News Letters", desc: "Periodic newsletter design and bulk printing.", tint: "ink-green" },
-  { name: "Menu Cards", desc: "Restaurant and café menus — laminated or booklet.", tint: "ink-cyan" },
-  { name: "Cup Printing", desc: "Branded paper and ceramic cups with your logo.", tint: "ink-magenta" },
-  { name: "T-Shirt Printing", desc: "DTF and sublimation tees for teams and events.", tint: "ink-yellow" },
+  { name: "Cash Memos", desc: "Custom cash memo books for shops and traders.", tint: "ink-magenta", img: svcCashmemo },
+  { name: "Books", desc: "Notebooks, registers and bound book printing.", tint: "ink-yellow", img: svcBooks },
+  { name: "News Letters", desc: "Periodic newsletter design and bulk printing.", tint: "ink-green", img: svcNewsletter },
+  { name: "Menu Cards", desc: "Restaurant and café menus — laminated or booklet.", tint: "ink-cyan", img: svcMenu },
+  { name: "Cup Printing", desc: "Branded paper and ceramic cups with your logo.", tint: "ink-magenta", img: svcCups },
+  { name: "T-Shirt Printing", desc: "DTF and sublimation tees, uniforms and tracksuits.", tint: "ink-yellow", img: realTshirt.url },
   {
     name: "Wallpapers",
     desc: "Custom wall murals and wallpaper printing. WhatsApp to see designs.",
     tint: "ink-green",
+    img: svcWallpaper,
     waText: "Hi Adsmart, I'd like to see wallpaper designs.",
   },
-  { name: "Social Media Posts", desc: "Daily post and reel design for your brand.", tint: "ink-cyan" },
-  { name: "Complete Branding", desc: "End-to-end identity: logo, stationery, signage.", tint: "ink-magenta" },
+  { name: "Social Media Posts", desc: "Daily post and reel design for your brand.", tint: "ink-cyan", img: svcSocial },
+  { name: "Complete Branding", desc: "End-to-end identity: logo, stationery, signage.", tint: "ink-magenta", img: realBranding.url },
 ];
 
 const GALLERY = [
-  { src: work4.url, label: "Markhor — complete branding suite", span: "lg:col-span-2 lg:row-span-2" },
-  { src: work6.url, label: "Adsmart visiting cards", span: "lg:col-span-2" },
+  { src: realBranding.url, label: "Blue Sky Real Estate — brochure & branding", span: "lg:col-span-2 lg:row-span-2" },
+  { src: realBacklight.url, label: "Hamza Grocery — backlight board signage", span: "lg:col-span-2" },
+  { src: realLed.url, label: "Asaan Supermarket — LED channel letters", span: "" },
+  { src: realBillboard.url, label: "USWA Institute — large billboard panaflex", span: "" },
+  { src: realBus.url, label: "AIMS School — bus wrap branding", span: "lg:col-span-2" },
+  { src: realTshirt.url, label: "Aghan Schools — uniform tracksuits", span: "" },
+  { src: realPackaging.url, label: "Potent 365 — product packaging", span: "" },
+  { src: realFlag.url, label: "Hi BPO — printed corporate flag", span: "" },
+  { src: work4.url, label: "Markhor — complete branding suite", span: "lg:col-span-2" },
+  { src: work6.url, label: "Adsmart visiting cards", span: "" },
   { src: work2.url, label: "Engraved retirement shield", span: "" },
   { src: work3.url, label: "X-banner stand panaflex", span: "" },
   { src: work7.url, label: "Acrylic house name plate", span: "" },
@@ -83,6 +111,7 @@ const GALLERY = [
   { src: work9.url, label: "Custom map print", span: "" },
   { src: work11.url, label: "Dental clinic flyer", span: "lg:col-span-2" },
 ];
+
 
 const WA_PRIMARY = "923344003813";
 const WA_SECONDARY = "923468836901";
