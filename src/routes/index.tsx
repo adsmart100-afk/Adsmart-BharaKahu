@@ -10,8 +10,16 @@ import svcShields from "@/assets/svc-shields.jpg";
 import svcFlyers from "@/assets/svc-flyers.jpg";
 import svcFiles from "@/assets/svc-files.jpg";
 import svcBillbooks from "@/assets/svc-billbooks.jpg";
-import galleryPress from "@/assets/gallery-press.jpg";
-import gallerySignboard from "@/assets/gallery-signboard.jpg";
+import work2 from "@/assets/work-2.png.asset.json";
+import work3 from "@/assets/work-3.png.asset.json";
+import work4 from "@/assets/work-4.png.asset.json";
+import work5 from "@/assets/work-5.png.asset.json";
+import work6 from "@/assets/work-6.png.asset.json";
+import work7 from "@/assets/work-7.png.asset.json";
+import work8 from "@/assets/work-8.png.asset.json";
+import work9 from "@/assets/work-9.png.asset.json";
+import work10 from "@/assets/work-10.png.asset.json";
+import work11 from "@/assets/work-11.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,42 +28,70 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Premium digital printing in Bhara Kahu, Islamabad. Panaflex, visiting cards, brochures, wedding cards, certificates, stickers, shields, flyers, files, bill books.",
+          "Premium digital printing in Bhara Kahu, Islamabad. Panaflex, backlit boards, LED boards, wedding cards, branding, t-shirts, wallpapers and more.",
       },
     ],
   }),
   component: Index,
 });
 
-const SERVICES = [
+type Service = { name: string; desc: string; tint: string; img?: string; waText?: string };
+
+const SERVICES: Service[] = [
   { name: "Panaflex", desc: "Weather-resistant large-format signage and banners.", tint: "ink-cyan", img: svcPanaflex },
+  { name: "Backlit Board", desc: "Illuminated flex boards for shopfronts and signage.", tint: "ink-magenta" },
+  { name: "LED Board", desc: "Bright LED signboards, custom sizes and channels.", tint: "ink-yellow" },
+  { name: "3D Acrylic Boards", desc: "Raised acrylic letters and logos for premium signage.", tint: "ink-green" },
+  { name: "Name Plates", desc: "House, office and door name plates — acrylic or metal.", tint: "ink-cyan" },
   { name: "Visiting Cards", desc: "Matte, gloss and textured finishes that last.", tint: "ink-magenta", img: svcVisiting },
   { name: "Brochures", desc: "Bi-fold, tri-fold and stitched marketing books.", tint: "ink-yellow", img: svcBrochures },
-  { name: "Wedding Cards", desc: "Custom invitations with foil and emboss work.", tint: "ink-green", img: svcWedding },
-  { name: "Certificates", desc: "Crisp award and recognition prints, foil optional.", tint: "ink-cyan", img: svcCertificates },
-  { name: "Stickers", desc: "Die-cut vinyl decals and adhesive product labels.", tint: "ink-magenta", img: svcStickers },
-  { name: "Shields", desc: "Acrylic and wooden recognition shields, engraved.", tint: "ink-yellow", img: svcShields },
   { name: "Flyers", desc: "Single-sheet promo prints in any GSM, bulk runs.", tint: "ink-green", img: svcFlyers },
-  { name: "Files", desc: "Branded folders and presentation files for offices.", tint: "ink-cyan", img: svcFiles },
-  { name: "Bill Books", desc: "Serialized carbonless invoice and receipt pads.", tint: "ink-magenta", img: svcBillbooks },
+  { name: "Wedding Cards", desc: "Custom invitations with foil and emboss work.", tint: "ink-cyan", img: svcWedding },
+  { name: "Fabric Sashes", desc: "Printed sashes for events, weddings and pageants.", tint: "ink-magenta" },
+  { name: "Certificates", desc: "Crisp award and recognition prints, foil optional.", tint: "ink-yellow", img: svcCertificates },
+  { name: "Result Cards", desc: "School and academy result card printing in bulk.", tint: "ink-green" },
+  { name: "Stickers", desc: "Die-cut vinyl decals and adhesive product labels.", tint: "ink-cyan", img: svcStickers },
+  { name: "Shields", desc: "Acrylic and wooden recognition shields, engraved.", tint: "ink-magenta", img: svcShields },
+  { name: "Stamps", desc: "Self-inking and rubber stamps, ready same day.", tint: "ink-yellow" },
+  { name: "File Covers", desc: "Branded folders and presentation files for offices.", tint: "ink-green", img: svcFiles },
+  { name: "Bill Books", desc: "Serialized carbonless invoice and receipt pads.", tint: "ink-cyan", img: svcBillbooks },
+  { name: "Cash Memos", desc: "Custom cash memo books for shops and traders.", tint: "ink-magenta" },
+  { name: "Books", desc: "Notebooks, registers and bound book printing.", tint: "ink-yellow" },
+  { name: "News Letters", desc: "Periodic newsletter design and bulk printing.", tint: "ink-green" },
+  { name: "Menu Cards", desc: "Restaurant and café menus — laminated or booklet.", tint: "ink-cyan" },
+  { name: "Cup Printing", desc: "Branded paper and ceramic cups with your logo.", tint: "ink-magenta" },
+  { name: "T-Shirt Printing", desc: "DTF and sublimation tees for teams and events.", tint: "ink-yellow" },
+  {
+    name: "Wallpapers",
+    desc: "Custom wall murals and wallpaper printing. WhatsApp to see designs.",
+    tint: "ink-green",
+    waText: "Hi Adsmart, I'd like to see wallpaper designs.",
+  },
+  { name: "Social Media Posts", desc: "Daily post and reel design for your brand.", tint: "ink-cyan" },
+  { name: "Complete Branding", desc: "End-to-end identity: logo, stationery, signage.", tint: "ink-magenta" },
 ];
 
 const GALLERY = [
-  { src: galleryPress, label: "Wide-format press run", span: "lg:col-span-2 lg:row-span-2" },
-  { src: svcWedding, label: "Gold foil wedding suite", span: "" },
-  { src: svcPanaflex, label: "Outdoor panaflex install", span: "" },
-  { src: svcStickers, label: "Die-cut sticker batch", span: "lg:col-span-2" },
-  { src: svcShields, label: "Engraved acrylic shield", span: "" },
-  { src: svcBrochures, label: "Tri-fold brochure", span: "" },
-  { src: gallerySignboard, label: "Illuminated signboard", span: "lg:col-span-2" },
-  { src: svcVisiting, label: "Matte visiting cards", span: "" },
-  { src: svcCertificates, label: "Foil certificate", span: "" },
-  { src: svcBillbooks, label: "Carbonless bill book", span: "" },
+  { src: work4.url, label: "Markhor — complete branding suite", span: "lg:col-span-2 lg:row-span-2" },
+  { src: work6.url, label: "Adsmart visiting cards", span: "lg:col-span-2" },
+  { src: work2.url, label: "Engraved retirement shield", span: "" },
+  { src: work3.url, label: "X-banner stand panaflex", span: "" },
+  { src: work7.url, label: "Acrylic house name plate", span: "" },
+  { src: work8.url, label: "Madrasa letterhead bill book", span: "" },
+  { src: work5.url, label: "Floral wedding invitation", span: "lg:col-span-2" },
+  { src: work10.url, label: "Wedding invitation suite", span: "" },
+  { src: work9.url, label: "Custom map print", span: "" },
+  { src: work11.url, label: "Dental clinic flyer", span: "lg:col-span-2" },
 ];
 
 const WA_PRIMARY = "923344003813";
 const WA_SECONDARY = "923468836901";
+const DEFAULT_WA_TEXT = "Hi Adsmart, I'd like a quote for printing.";
 const MAPS_URL = "https://maps.app.goo.gl/CiyvGHV8kNns2XQt6";
+
+function waLink(phone: string = WA_PRIMARY, text: string = DEFAULT_WA_TEXT) {
+  return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+}
 
 function Index() {
   return (
@@ -73,21 +109,13 @@ function Index() {
             </div>
           </a>
           <div className="hidden items-center gap-8 md:flex">
-            <a href="#services" className="text-xs font-semibold uppercase tracking-widest hover:text-brand">
-              Services
-            </a>
-            <a href="#gallery" className="text-xs font-semibold uppercase tracking-widest hover:text-brand">
-              Gallery
-            </a>
-            <a href="#about" className="text-xs font-semibold uppercase tracking-widest hover:text-brand">
-              About
-            </a>
-            <a href="#contact" className="text-xs font-semibold uppercase tracking-widest hover:text-brand">
-              Contact
-            </a>
+            <a href="#services" className="text-xs font-semibold uppercase tracking-widest hover:text-brand">Services</a>
+            <a href="#gallery" className="text-xs font-semibold uppercase tracking-widest hover:text-brand">Gallery</a>
+            <a href="#about" className="text-xs font-semibold uppercase tracking-widest hover:text-brand">About</a>
+            <a href="#contact" className="text-xs font-semibold uppercase tracking-widest hover:text-brand">Contact</a>
           </div>
           <a
-            href={`https://wa.me/${WA_PRIMARY}`}
+            href={waLink()}
             target="_blank"
             rel="noreferrer"
             className="bg-ink px-4 py-2 text-xs font-bold uppercase tracking-widest text-paper transition-colors hover:bg-brand"
@@ -100,11 +128,7 @@ function Index() {
       {/* HERO */}
       <header id="top" className="relative overflow-hidden border-b border-ink/10">
         <div className="absolute inset-0 -z-10 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "radial-gradient(var(--ink) 1px, transparent 1px)",
-            backgroundSize: "16px 16px",
-          }}
+          style={{ backgroundImage: "radial-gradient(var(--ink) 1px, transparent 1px)", backgroundSize: "16px 16px" }}
         />
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-12 lg:py-32">
           <div className="lg:col-span-7">
@@ -126,12 +150,12 @@ function Index() {
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink/70">
               Adsmart is a full-service digital print house in Bhara Kahu, Islamabad. From
-              large-format panaflex to fine wedding cards, we put your ideas on paper, vinyl,
-              acrylic — whatever the job needs.
+              large-format panaflex and LED boards to fine wedding cards, t-shirts and complete
+              branding — we put your ideas on paper, vinyl, acrylic, fabric and walls.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
-                href={`https://wa.me/${WA_PRIMARY}`}
+                href={waLink()}
                 target="_blank"
                 rel="noreferrer"
                 className="group inline-flex items-center gap-3 bg-ink px-7 py-4 text-sm font-bold uppercase tracking-widest text-paper shadow-[6px_6px_0_0_var(--brand)] transition-transform hover:-translate-y-0.5"
@@ -143,7 +167,7 @@ function Index() {
                 href="#services"
                 className="text-xs font-semibold uppercase tracking-widest text-ink/70 underline-offset-8 hover:text-ink hover:underline"
               >
-                See all 10 services
+                See all services
               </a>
             </div>
           </div>
@@ -163,7 +187,6 @@ function Index() {
           </div>
         </div>
 
-        {/* CMYK strip */}
         <div className="grid grid-cols-4 border-t border-ink/10">
           <div className="h-2 bg-ink-cyan" />
           <div className="h-2 bg-ink-magenta" />
@@ -185,30 +208,44 @@ function Index() {
               </h2>
             </div>
             <p className="max-w-sm text-sm text-paper/60">
-              Ten core services, run in-house with calibrated colour and clean registration.
-              One quote, one delivery.
+              {SERVICES.length}+ services, run in-house with calibrated colour and clean
+              registration. One quote, one delivery.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-px bg-paper/10 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="grid grid-cols-1 gap-px bg-paper/10 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
             {SERVICES.map((s, i) => (
-              <div
+              <a
                 key={s.name}
+                href={waLink(WA_PRIMARY, s.waText ?? `Hi Adsmart, I'm interested in ${s.name}.`)}
+                target="_blank"
+                rel="noreferrer"
                 className="group relative flex flex-col bg-ink transition-colors duration-500"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
-                    src={s.img}
-                    alt={`${s.name} sample by Adsmart`}
-                    loading="lazy"
-                    width={1024}
-                    height={1024}
-                    className="size-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
-                  />
-                  <div
-                    className="pointer-events-none absolute inset-0 mix-blend-multiply opacity-70 transition-opacity duration-500 group-hover:opacity-0"
-                    style={{ background: `var(--${s.tint})` }}
-                  />
+                  {s.img ? (
+                    <>
+                      <img
+                        src={s.img}
+                        alt={`${s.name} sample by Adsmart`}
+                        loading="lazy"
+                        className="size-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                      />
+                      <div
+                        className="pointer-events-none absolute inset-0 mix-blend-multiply opacity-70 transition-opacity duration-500 group-hover:opacity-0"
+                        style={{ background: `var(--${s.tint})` }}
+                      />
+                    </>
+                  ) : (
+                    <div
+                      className="flex size-full items-center justify-center transition-transform duration-500 group-hover:scale-105"
+                      style={{ background: `var(--${s.tint})` }}
+                    >
+                      <span className="font-display text-3xl uppercase text-ink/80 md:text-4xl">
+                        {s.name.split(" ")[0]}
+                      </span>
+                    </div>
+                  )}
                   <span className="absolute left-3 top-3 font-mono text-[10px] tracking-widest text-paper/90">
                     {String(i + 1).padStart(2, "0")} ●
                   </span>
@@ -217,11 +254,9 @@ function Index() {
                   <h3 className="font-display text-2xl uppercase leading-none text-paper md:text-3xl">
                     {s.name}
                   </h3>
-                  <p className="mt-2 text-xs leading-snug text-paper/60">
-                    {s.desc}
-                  </p>
+                  <p className="mt-2 text-xs leading-snug text-paper/60">{s.desc}</p>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -249,7 +284,7 @@ function Index() {
               clean, and have it ready when we said it would be.
             </p>
             <div className="grid grid-cols-3 gap-6 pt-6">
-              <Stat n="10" label="Core services" />
+              <Stat n={`${SERVICES.length}+`} label="Services" />
               <Stat n="24h" label="Typical turnaround" />
               <Stat n="100%" label="CMYK calibrated" />
             </div>
@@ -270,23 +305,18 @@ function Index() {
               </h2>
             </div>
             <p className="max-w-sm text-sm text-ink/60">
-              A peek at jobs off the press — banners, cards, shields and everything in between.
-              Want something similar? Send it on WhatsApp.
+              Real jobs off the Adsmart press — branding, banners, cards, shields and everything
+              in between. Want something similar? Send it on WhatsApp.
             </p>
           </div>
 
           <div className="grid auto-rows-[180px] grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 lg:auto-rows-[200px]">
             {GALLERY.map((g, i) => (
-              <figure
-                key={i}
-                className={`group relative overflow-hidden bg-ink ${g.span}`}
-              >
+              <figure key={i} className={`group relative overflow-hidden bg-ink ${g.span}`}>
                 <img
                   src={g.src}
                   alt={g.label}
                   loading="lazy"
-                  width={1024}
-                  height={1024}
                   className="size-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-ink/90 px-4 py-3 font-mono text-[10px] uppercase tracking-widest text-paper transition-transform duration-300 group-hover:translate-y-0">
@@ -301,7 +331,7 @@ function Index() {
 
           <div className="mt-10 flex justify-center">
             <a
-              href={`https://wa.me/${WA_PRIMARY}`}
+              href={waLink()}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-3 border border-ink bg-paper px-6 py-3 text-xs font-bold uppercase tracking-widest text-ink transition-all hover:bg-ink hover:text-paper"
@@ -314,7 +344,6 @@ function Index() {
 
       {/* CONTACT */}
       <section id="contact" className="py-24">
-
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-14">
             <div className="mb-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink/50">
@@ -330,13 +359,13 @@ function Index() {
               <ContactCard
                 kind="WhatsApp · Primary"
                 value="0334-4003813"
-                href={`https://wa.me/${WA_PRIMARY}`}
+                href={waLink(WA_PRIMARY)}
                 accent="ink-green"
               />
               <ContactCard
                 kind="WhatsApp · Secondary"
                 value="0346-8836901"
-                href={`https://wa.me/${WA_SECONDARY}`}
+                href={waLink(WA_SECONDARY)}
                 accent="ink-cyan"
               />
               <ContactCard
@@ -398,6 +427,19 @@ function Index() {
           </p>
         </div>
       </footer>
+
+      {/* Floating WhatsApp */}
+      <a
+        href={waLink()}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="fixed bottom-6 right-6 z-50 flex size-14 items-center justify-center rounded-full bg-ink-green text-paper shadow-[0_8px_24px_rgba(0,0,0,0.25)] transition-transform hover:scale-110"
+      >
+        <svg viewBox="0 0 24 24" className="size-7" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.693.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.04 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.511-5.26c.001-5.45 4.436-9.884 9.889-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.04 0C5.463 0 .104 5.335.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.305-1.654a11.882 11.882 0 0 0 5.733 1.46h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.483-8.413z" />
+        </svg>
+      </a>
     </div>
   );
 }
@@ -412,17 +454,9 @@ function Stat({ n, label }: { n: string; label: string }) {
 }
 
 function ContactCard({
-  kind,
-  value,
-  href,
-  accent,
-  external,
+  kind, value, href, accent, external,
 }: {
-  kind: string;
-  value: string;
-  href: string;
-  accent: string;
-  external?: boolean;
+  kind: string; value: string; href: string; accent: string; external?: boolean;
 }) {
   return (
     <a
@@ -432,20 +466,13 @@ function ContactCard({
       className="group flex items-center justify-between border border-ink/10 bg-card p-6 transition-all hover:border-ink hover:shadow-[6px_6px_0_0_var(--ink)]"
     >
       <div className="flex items-center gap-5">
-        <span
-          className="size-3 rounded-full"
-          style={{ background: `var(--${accent})` }}
-        />
+        <span className="size-3 rounded-full" style={{ background: `var(--${accent})` }} />
         <div>
-          <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/50">
-            {kind}
-          </div>
+          <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/50">{kind}</div>
           <div className="font-display text-2xl uppercase tracking-wide md:text-3xl">{value}</div>
         </div>
       </div>
-      <span className="font-mono text-xl text-ink/30 transition-all group-hover:translate-x-1 group-hover:text-ink">
-        →
-      </span>
+      <span className="font-mono text-xl text-ink/30 transition-all group-hover:translate-x-1 group-hover:text-ink">→</span>
     </a>
   );
 }
