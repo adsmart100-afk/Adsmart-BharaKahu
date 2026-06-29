@@ -21,24 +21,14 @@ import svcMenuAsset from "@/assets/svc-menu.jpg.asset.json";
 import svcCupsAsset from "@/assets/svc-cups.jpg.asset.json";
 import svcWallpaperAsset from "@/assets/svc-wallpaper.jpg.asset.json";
 import svcSocialAsset from "@/assets/svc-social.jpg.asset.json";
-import realBacklight from "@/assets/real-backlight.jpg.asset.json";
-import realLed from "@/assets/real-led.jpg.asset.json";
-import realBranding from "@/assets/real-branding.jpg.asset.json";
-import realTshirt from "@/assets/real-tshirt.jpg.asset.json";
-import realFlag from "@/assets/real-flag.jpg.asset.json";
-import realBus from "@/assets/real-bus.jpg.asset.json";
-import realBillboard from "@/assets/real-billboard.jpg.asset.json";
-import realPackaging from "@/assets/real-packaging.jpg.asset.json";
-import work2 from "@/assets/work-2.png.asset.json";
-import work3 from "@/assets/work-3.png.asset.json";
-import work4 from "@/assets/work-4.png.asset.json";
-import work5 from "@/assets/work-5.png.asset.json";
-import work6 from "@/assets/work-6.png.asset.json";
-import work7 from "@/assets/work-7.png.asset.json";
-import work8 from "@/assets/work-8.png.asset.json";
-import work9 from "@/assets/work-9.png.asset.json";
-import work10 from "@/assets/work-10.png.asset.json";
-import work11 from "@/assets/work-11.png.asset.json";
+import mockBacklight from "@/assets/mock-backlight.jpg.asset.json";
+import mockLed from "@/assets/mock-led.jpg.asset.json";
+import mockBranding from "@/assets/mock-branding.jpg.asset.json";
+import mockTshirt from "@/assets/mock-tshirt.jpg.asset.json";
+import mockFlag from "@/assets/mock-flag.jpg.asset.json";
+import mockBus from "@/assets/mock-bus.jpg.asset.json";
+import mockBillboard from "@/assets/mock-billboard.jpg.asset.json";
+import mockPackaging from "@/assets/mock-packaging.jpg.asset.json";
 
 const logo = logoAsset;
 const svcPanaflex = svcPanaflexAsset.url;
@@ -81,15 +71,15 @@ type Service = { name: string; desc: string; tint: string; img?: string; waText?
 
 const SERVICES: Service[] = [
   { name: "Panaflex", desc: "Weather-resistant large-format signage and banners.", tint: "ink-cyan", img: svcPanaflex },
-  { name: "Backlight Board", desc: "Illuminated flex boards for shopfronts and signage.", tint: "ink-magenta", img: realBacklight.url },
-  { name: "LED Board", desc: "Bright LED signboards, custom sizes and channels.", tint: "ink-yellow", img: realLed.url },
+  { name: "Backlight Board", desc: "Illuminated flex boards for shopfronts and signage.", tint: "ink-magenta", img: mockBacklight.url },
+  { name: "LED Board", desc: "Bright LED signboards, custom sizes and channels.", tint: "ink-yellow", img: mockLed.url },
   { name: "3D Acrylic Boards", desc: "Raised acrylic letters and logos for premium signage.", tint: "ink-green", img: svcAcrylic },
   { name: "Name Plates", desc: "House, office and door name plates — acrylic or metal.", tint: "ink-cyan", img: svcNameplate },
   { name: "Visiting Cards", desc: "Matte, gloss and textured finishes that last.", tint: "ink-magenta", img: svcVisiting },
   { name: "Brochures", desc: "Bi-fold, tri-fold and stitched marketing books.", tint: "ink-yellow", img: svcBrochures },
   { name: "Flyers", desc: "Single-sheet promo prints in any GSM, bulk runs.", tint: "ink-green", img: svcFlyers },
   { name: "Wedding Cards", desc: "Custom invitations with foil and emboss work.", tint: "ink-cyan", img: svcWedding },
-  { name: "Fabric Sashes", desc: "Printed sashes and flags for events and pageants.", tint: "ink-magenta", img: realFlag.url },
+  { name: "Fabric Sashes", desc: "Printed sashes and flags for events and pageants.", tint: "ink-magenta", img: mockFlag.url },
   { name: "Certificates", desc: "Crisp award and recognition prints, foil optional.", tint: "ink-yellow", img: svcCertificates },
   { name: "Result Cards", desc: "School and academy result card printing in bulk.", tint: "ink-green", img: svcResultcards },
   { name: "Stickers", desc: "Die-cut vinyl decals and adhesive product labels.", tint: "ink-cyan", img: svcStickers },
@@ -102,7 +92,7 @@ const SERVICES: Service[] = [
   { name: "News Letters", desc: "Periodic newsletter design and bulk printing.", tint: "ink-green", img: svcNewsletter },
   { name: "Menu Cards", desc: "Restaurant and café menus — laminated or booklet.", tint: "ink-cyan", img: svcMenu },
   { name: "Cup Printing", desc: "Branded paper and ceramic cups with your logo.", tint: "ink-magenta", img: svcCups },
-  { name: "T-Shirt Printing", desc: "DTF and sublimation tees, uniforms and tracksuits.", tint: "ink-yellow", img: realTshirt.url },
+  { name: "T-Shirt Printing", desc: "DTF and sublimation tees, uniforms and tracksuits.", tint: "ink-yellow", img: mockTshirt.url },
   {
     name: "Wallpapers",
     desc: "Custom wall murals and wallpaper printing. WhatsApp to see designs.",
@@ -111,28 +101,25 @@ const SERVICES: Service[] = [
     waText: "Hi Adsmart, I'd like to see wallpaper designs.",
   },
   { name: "Social Media Posts", desc: "Daily post and reel design for your brand.", tint: "ink-cyan", img: svcSocial },
-  { name: "Complete Branding", desc: "End-to-end identity: logo, stationery, signage.", tint: "ink-magenta", img: realBranding.url },
+  { name: "Complete Branding", desc: "End-to-end identity: logo, stationery, signage.", tint: "ink-magenta", img: mockBranding.url },
 ];
 
 const GALLERY = [
-  { src: realBranding.url, label: "Blue Sky Real Estate — brochure & branding", span: "lg:col-span-2 lg:row-span-2" },
-  { src: realBacklight.url, label: "Hamza Grocery — backlight board signage", span: "lg:col-span-2" },
-  { src: realLed.url, label: "Asaan Supermarket — LED channel letters", span: "" },
-  { src: realBillboard.url, label: "USWA Institute — large billboard panaflex", span: "" },
-  { src: realBus.url, label: "AIMS School — bus wrap branding", span: "lg:col-span-2" },
-  { src: realTshirt.url, label: "Aghan Schools — uniform tracksuits", span: "" },
-  { src: realPackaging.url, label: "Potent 365 — product packaging", span: "" },
-  { src: realFlag.url, label: "Hi BPO — printed corporate flag", span: "" },
-  { src: work4.url, label: "Markhor — complete branding suite", span: "lg:col-span-2" },
-  { src: work6.url, label: "Adsmart visiting cards", span: "" },
-  { src: work2.url, label: "Engraved retirement shield", span: "" },
-  { src: work3.url, label: "X-banner stand panaflex", span: "" },
-  { src: work7.url, label: "Acrylic house name plate", span: "" },
-  { src: work8.url, label: "Madrasa letterhead bill book", span: "" },
-  { src: work5.url, label: "Floral wedding invitation", span: "lg:col-span-2" },
-  { src: work10.url, label: "Wedding invitation suite", span: "" },
-  { src: work9.url, label: "Custom map print", span: "" },
-  { src: work11.url, label: "Dental clinic flyer", span: "lg:col-span-2" },
+  { src: mockBranding.url, label: "Complete brand identity suite", span: "lg:col-span-2 lg:row-span-2" },
+  { src: mockBacklight.url, label: "Backlight board shop signage", span: "lg:col-span-2" },
+  { src: mockLed.url, label: "LED channel letter signboard", span: "" },
+  { src: mockBillboard.url, label: "Highway billboard panaflex", span: "" },
+  { src: mockBus.url, label: "School bus vinyl wrap", span: "lg:col-span-2" },
+  { src: mockTshirt.url, label: "Uniform t-shirt printing", span: "" },
+  { src: mockPackaging.url, label: "Product packaging & labels", span: "" },
+  { src: mockFlag.url, label: "Custom fabric sash & flag", span: "" },
+  { src: svcWedding, label: "Wedding invitation suite", span: "lg:col-span-2" },
+  { src: svcVisiting, label: "Premium visiting cards", span: "" },
+  { src: svcShields, label: "Engraved recognition shield", span: "" },
+  { src: svcPanaflex, label: "Storefront panaflex banner", span: "" },
+  { src: svcNameplate, label: "Acrylic name plate", span: "" },
+  { src: svcBillbooks, label: "Carbonless bill book", span: "" },
+  { src: svcStickers, label: "Die-cut vinyl stickers", span: "lg:col-span-2" },
 ];
 
 
