@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logoAsset from "@/assets/adsmart-logo.jpg.asset.json";
+import logoAsset from "@/assets/adsmart-logo.png.asset.json";
 import svcPanaflexAsset from "@/assets/svc-panaflex.jpg.asset.json";
 import svcVisitingAsset from "@/assets/svc-visiting.jpg.asset.json";
 import svcBrochuresAsset from "@/assets/svc-brochures.jpg.asset.json";
