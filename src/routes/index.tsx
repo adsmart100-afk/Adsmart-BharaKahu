@@ -29,6 +29,9 @@ import mockFlag from "@/assets/mock-flag.jpg.asset.json";
 import mockBus from "@/assets/mock-bus.jpg.asset.json";
 import mockBillboard from "@/assets/mock-billboard.jpg.asset.json";
 import mockPackaging from "@/assets/mock-packaging.jpg.asset.json";
+import galleryBillboard from "@/assets/gallery-billboard.jpg";
+import galleryBusWrap from "@/assets/gallery-bus-wrap.jpg";
+import galleryPackaging from "@/assets/gallery-packaging.jpg";
 
 const logo = logoAsset;
 const svcPanaflex = svcPanaflexAsset.url;
@@ -62,6 +65,14 @@ export const Route = createFileRoute("/")({
         content:
           "Premium digital printing in Bhara Kahu, Islamabad. Panaflex, backlight boards, LED boards, wedding cards, branding, t-shirts, wallpapers and more.",
       },
+      { property: "og:title", content: "Adsmart Digital Printing Services | Bhara Kahu" },
+      {
+        property: "og:description",
+        content:
+          "Explore Adsmart's digital printing, signage, stationery, and branding services in Bhara Kahu, Islamabad.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Index,
@@ -108,10 +119,10 @@ const GALLERY = [
   { src: mockBranding.url, label: "Complete brand identity suite", span: "lg:col-span-2 lg:row-span-2" },
   { src: mockBacklight.url, label: "Backlight board shop signage", span: "lg:col-span-2" },
   { src: mockLed.url, label: "LED channel letter signboard", span: "" },
-  { src: mockBillboard.url, label: "Highway billboard panaflex", span: "" },
-  { src: mockBus.url, label: "School bus vinyl wrap", span: "lg:col-span-2" },
+  { src: galleryBillboard, label: "Highway billboard panaflex", span: "" },
+  { src: galleryBusWrap, label: "School bus vinyl wrap", span: "lg:col-span-2" },
   { src: mockTshirt.url, label: "Uniform t-shirt printing", span: "" },
-  { src: mockPackaging.url, label: "Product packaging & labels", span: "" },
+  { src: galleryPackaging, label: "Product packaging & labels", span: "" },
   { src: mockFlag.url, label: "Custom fabric sash & flag", span: "" },
   { src: svcWedding, label: "Wedding invitation suite", span: "lg:col-span-2" },
   { src: svcVisiting, label: "Premium visiting cards", span: "" },
