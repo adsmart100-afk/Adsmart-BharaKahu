@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Build configuration
+- Use `@lovable.dev/vite-tanstack-config` in `vite.config.ts` so builds use the TanStack Start route-based app and its required plugins.

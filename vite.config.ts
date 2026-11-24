@@ -1,8 +1,7 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  base: "/Adsmart-BharaKahu/",
-  plugins: [react()],
+  vite: {
+    base: "/Adsmart-BharaKahu/",
+  },
 });
